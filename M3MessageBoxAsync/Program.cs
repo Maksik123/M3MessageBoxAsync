@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-
+            Starter starter = new();
+            starter.Start();
         }
     }
 }
