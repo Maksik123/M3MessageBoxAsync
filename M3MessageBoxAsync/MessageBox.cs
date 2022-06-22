@@ -24,18 +24,13 @@ namespace M3MessageBoxAsync
             Console.WriteLine("Window Open");
             Thread.Sleep(3000);
             Console.WriteLine("Window closed by user");
-            if (randomInt == 0)
-            {
-                StateTransmit(State.Ok);
-            }
-            if (randomInt == 1)
-            {
-                StateTransmit(State.Cancel);
-            }
+            State st = (State)randomInt;
+            StateTransmit(st);
         }
 
         public delegate void StateTransmitter(State state);
         public event StateTransmitter StateTransmit;
+
         public void StateTrans(State state)
         {
             if (state == State.Ok)
